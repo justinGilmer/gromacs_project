@@ -30,12 +30,12 @@ class Pentane_box(mb.Compound):
         # fill box with pentanes
         box = mb.Box([3, 3, 3])
         pentane = Pentane()
-        self.add(mb.fill_box(compound=pentane, n_compounds=100, box=box))
+        self.add(mb.fill_box(compound=pentane, n_compounds=75, box=box))
 
 
 if __name__ == "__main__":
     print('Building Pentane box system with:')
-    print('{} nm box,\t {} pentane molecules'.format([3,3,3], 100))
+    print('{} nm box,\t {} pentane molecules'.format([3,3,3], 75))
 
     box_pentane = Pentane_box()
 

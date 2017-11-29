@@ -11,8 +11,8 @@ nstlog              = 1000
 cutoff-scheme       = Verlet
 ns_type             = grid
 nstlist             = 10
-rcoulomb            = 1.1
-rvdw                = 1.1
+rcoulomb            = 0.5
+rvdw                = 0.5
 
 coulombtype         = PME
 fourierspacing      = 0.16
