@@ -14,6 +14,7 @@ if [ -e pentane_system.gro && -e pentane_system.top ]; then
     echo "Found pentane files for GROMACS!"
 else
     echo "No GROMACS files found for pentane system."
+    echo "mBuild or Foyer did not seem to work correctly."
     exit 1
 fi
 

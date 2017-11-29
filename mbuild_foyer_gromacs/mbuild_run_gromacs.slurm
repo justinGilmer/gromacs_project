@@ -27,4 +27,5 @@ gmx grompp -f equil.mdp -c em.gro -p pentane_system.top -o equil.tpr
 gmx mdrun -v -deffnm equil
 
 #sample under npt for 1ns at 250K and 1atm
-gmx grompp -f sample.mdp
+gmx grompp -f sample.mdp -c equil.gro -p pentane_system.top -o sample.tpr
+gmx mdrun -v -deffnm sample
