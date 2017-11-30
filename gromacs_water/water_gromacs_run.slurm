@@ -18,7 +18,7 @@ export PATH=/home/gilmerjb/bin/bin:$PATH
 gmx solvate -cs spc216.gro -box 2 2 2 -maxsol 200 -o water_box.gro
 
 # generate topology file containing necessary atomtypes
-gmx pdb2gmx -water spc -f water_box.gro -p water_box.top
+gmx pdb2gmx -water spc -ff oplsaa -f water_box.gro -p water_box.top
 
 # energy minimize and then run nve at 298K
 gmx grompp -f em.mdp -c water_box.gro -p water_box.top -o em.tpr
