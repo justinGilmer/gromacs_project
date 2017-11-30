@@ -1,5 +1,6 @@
 #!/bin/bash
 #SBATCH --nodes=1
+#SBATCH --export=ALL
 #SBATCH --time=1:00:00                  # 1 hours
 #SBATCH --mem=2G                        # 2 GB RAM 
 #SBATCH --output=water_box_sim.log      # output file
