@@ -10,7 +10,7 @@ source activate chbe_gromacs35
 python build_pentane.py
 
 # ensure that the GROMACS files were generated
-if [ -e pentane_system.gro && -e pentane_system.top ]; then
+if [ -e pentane_system.gro ] && [ -e pentane_system.top ]; then
     echo "Found pentane files for GROMACS!"
 else
     echo "No GROMACS files found for pentane system."

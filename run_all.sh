@@ -13,9 +13,13 @@ cp $PWD/gromacs_module_env ~/.lmod.d/gromacs_module_env
 # anaconda
 if [ -d ~/.conda/envs/chbe_gromacs35 ]; then
 	echo "Environment already exists"
-	exit 1
+	echo "skipping..."
 else
-	conda create -n chbe_gromacs35 python=3.5 -y -c omnia -c conda-forge -c mosdef -c bioconda mbuild parmed foyer mdtraj
+	conda config --add channels omnia
+	conda config --add channels conda-forge
+	conda config --add channels mosdef
+	conda config --add channels bioconda
+	conda create -y --name chbe_gromacs35 python=3.5 mdtraj mbuild foyer
 fi
 
 #------------------------------------------------------------
@@ -23,14 +27,14 @@ fi
 #------------------------------------------------------------
 # run the water simulation
 cd $PWD/gromacs_water
-bash simulate.sh
+bash simulate_water.sh
 cd ..
 #------------------------------------------------------------
 
 #------------------------------------------------------------
 # run the pentane MoSDeF simulation
 cd $PWD/mbuild_foyer_gromacs
-bash simulate.sh
+bash simulate_pentane.sh
 cd ..
 #------------------------------------------------------------
 

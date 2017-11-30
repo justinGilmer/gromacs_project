@@ -1,6 +1,5 @@
 #!/bin/bash
 #SBATCH --nodes=1
-#SBATCH --ntasks=4
 #SBATCH --time=1:00:00                  # 1 hours
 #SBATCH --mem=2G                        # 2 GB RAM 
 #SBATCH --output=mbuild_pentane.log     # output file
