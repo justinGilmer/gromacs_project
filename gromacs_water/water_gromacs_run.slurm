@@ -16,17 +16,17 @@ export PATH=/home/gilmerjb/bin/bin:$PATH
 
 # generate initial structure file using gmx solvate
 # water box with 200 molecules, 2x2x2nm box, spc216 structure
-gmx solvate -cs spc216.gro -box 2 2 2 -maxsol 200 -o water_box.gro
+/home/gilmerjb/bin/bin/gmx solvate -cs spc216.gro -box 2 2 2 -maxsol 200 -o water_box.gro
 
 # generate topology file containing necessary atomtypes
-gmx pdb2gmx -water spc -ff oplsaa -f water_box.gro -p water_box.top
+/home/gilmerjb/bin/bin/gmx pdb2gmx -water spc -ff oplsaa -f water_box.gro -p water_box.top
 
 # energy minimize and then run nve at 298K
-gmx grompp -f em.mdp -c water_box.gro -p water_box.top -o em.tpr
+/home/gilmerjb/bin/bin/gmx grompp -f em.mdp -c water_box.gro -p water_box.top -o em.tpr
 
 # run energy minimization using info from em.tpr binary
-gmx mdrun -v -deffnm em
+/home/gilmerjb/bin/bin/gmx mdrun -v -deffnm em
 
 # run nve on system
-gmx grompp -f nve.mdp -c em.gro -p water_box.top -o nve.tpr
-gmx mdrun -v -deffnm nve
+/home/gilmerjb/bin/bin/gmx grompp -f nve.mdp -c em.gro -p water_box.top -o nve.tpr
+/home/gilmerjb/bin/bin/gmx mdrun -v -deffnm nve
