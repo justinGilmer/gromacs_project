@@ -9,7 +9,10 @@
 #SBATCH --gres=gpu:1                    # single GPU job
 
 # add all modules
-module restore gromacs_test
+module restore gromacs_module_env
+
+# adding Justin's pre compiled gromacs to our path
+export PATH=/home/gilmerjb/bin/bin:$PATH
 
 # generate initial structure file using gmx solvate
 # water box with 200 molecules, 2x2x2nm box, spc216 structure

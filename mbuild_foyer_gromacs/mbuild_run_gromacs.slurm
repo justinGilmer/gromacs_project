@@ -9,7 +9,10 @@
 #SBATCH --gres=gpu:1                    # single GPU job
 
 # add all modules
-module restore gromacs_test
+module restore gromacs_module_env
+
+# add Justin's gromacs files to my path
+export PATH=/home/gilmerjb/bin/bin:$PATH
 
 # run necessary gromacs files
 

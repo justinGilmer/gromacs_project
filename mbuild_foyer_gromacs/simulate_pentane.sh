@@ -4,7 +4,7 @@
 #       into GROMACS with SLURM command
 
 # activate the anaconda environment
-source activate mosdef35
+source activate chbe_gromacs35
 
 # build mbuild system
 python build_pentane.py
