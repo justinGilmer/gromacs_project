@@ -9,6 +9,7 @@
 # check if module dir exists
 mkdir -p ~/.lmod.d
 cp $PWD/gromacs_module_env ~/.lmod.d/gromacs_module_env
+module restore gromacs_module_env
 
 # anaconda
 if [ -d ~/.conda/envs/chbe_gromacs35 ]; then
